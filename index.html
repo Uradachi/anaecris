@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carta Interativa 💘</title>
+  <style>
+    body {
+      background: linear-gradient(#ffe0f0, #ffc2d1);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      color: #5c0032;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .photo-container img {
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+      margin-bottom: 20px;
+    }
+    .message {
+      max-width: 600px;
+      text-align: center;
+      background: #fff0f6;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      margin: 20px 0;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #ff66a3;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #e05591;
+    }
+    .hidden {
+      display: none;
+    }
+    #mazeContainer {
+      margin-top: 30px;
+      display: none;
+      text-align: center;
+    }
+    canvas {
+      border: 3px solid #ff66a3;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    #mazeMessage {
+      font-size: 1.3em;
+      font-weight: bold;
+      text-align: center;
+      color: #5c0032;
+      max-width: 500px;
+      margin-bottom: 10px;
+    }
+    #touchControls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    #touchControls div {
+      display: flex;
+      gap: 10px;
+    }
+    #touchControls button {
+      padding: 10px;
+      font-size: 1.2em;
+      width: 60px;
+      height: 60px;
+      background-color: #ff66a3;
+      border: none;
+      border-radius: 50%;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    #touchControls button:hover {
+      background-color: #e05591;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Para o Amor da Minha Vida 💌</h1>
+
+  <!-- Botão para ativar a música -->
+  <button onclick="enableAudio()">🎶 Ativar música</button>
+
+  <a href="https://i.ibb.co/GfbSHqRc/ff5a27b7-bff2-4f81-a2b8-7a500aaa71f5.jpg">
+    <img src="https://i.ibb.co/GfbSHqRc/ff5a27b7-bff2-4f81-a2b8-7a500aaa71f5.jpg" alt="Nossa foto 1" style="max-width: 200px; margin-top: 15px; border-radius: 12px; box-shadow: 0 3px 12px rgba(0,0,0,0.1);" />
+  </a>
+
+  <div class="message">
+    <p>Oi, meu amor ❤️</p>
+    <p>Hoje é o Dia dos Namorados, mas eu me sinto sortudo todos os dias por ter você. A carta dessa vez vai ser um pouco diferente, mas feito com o mesmo amor de sempre. </p>
+
+    <a href="https://vk.com/sticker/1-10717-256b" target="_blank">
+      <img src="https://vk.com/sticker/1-10717-256b-256b" alt="Sticker" style="max-width: 200px; margin-top: 15px; border-radius: 12px; box-shadow: 0 3px 12px rgba(0,0,0,0.1);" />
+    </a>
+
+    <button onclick="reveal('msg1')">Clique aqui para continuar...</button>
+  </div>
+
+  <div class="message hidden" id="msg1">
+    <p>Foi assim que tudo começou... ✨</p>
+    <p>Se pararmos pra pensar na quantidade de variáveis para chegar até isso, parece um acontecimento impossível, mas aconteceu. Desde então, cada momento com você é uma parte linda da nossa história.</p>
+
+    <a href="https://i.ibb.co/8n835Y1f/0bd450af-f7bc-4d83-88be-498912e7975a.jpg" target="_blank">
+      <img src="https://i.ibb.co/8n835Y1f/0bd450af-f7bc-4d83-88be-498912e7975a.jpg" alt="Nossa foto 2" style="max-width: 200px; margin-top: 15px; border-radius: 12px; box-shadow: 0 3px 12px rgba(0,0,0,0.1);" />
+    </a>
+
+    <button onclick="reveal('msg2')">Me conta mais ❤️</button>
+  </div>
+
+  <div class="message hidden" id="msg2">
+    <p>Você me irrita, me acalma, me desafia e me completa. </p>
+    <p>Mesmo nas pequenas coisas, você transforma meu mundo em um lugar melhor.</p>
+
+    <a href="https://i.ibb.co/v4zRb85V/6c0208ae-1995-4517-acad-b84c110eba29.jpg" target="_blank">
+      <img src="https://i.ibb.co/v4zRb85V/6c0208ae-1995-4517-acad-b84c110eba29.jpg" alt="Nossa foto 3" style="max-width: 200px; margin-top: 15px; border-radius: 12px; box-shadow: 0 3px 12px rgba(0,0,0,0.1);" />
+    </a>
+
+    <button onclick="reveal('msg3')">Mais um pouquinho...</button>
+  </div>
+
+  <div class="message hidden" id="msg3">
+    <p>Quero muitos dias dos namorados com você. Mas mais que isso: quero todos os dias ao seu lado. 💑</p>
+    <p>Te amo muito. Feliz Dia dos Namorados! 💖</p>
+    <p>Com todo o meu amor,<br/>Cristione Martin</p>
+
+    <a href="https://i.ibb.co/9mtzLCtx/e63b198e-3696-479a-9764-10fd4ff67829.jpg" target="_blank">
+      <img src="https://i.ibb.co/9mtzLCtx/e63b198e-3696-479a-9764-10fd4ff67829.jpg" alt="Nossa foto 4" style="max-width: 200px; margin-top: 15px; border-radius: 12px; box-shadow: 0 3px 12px rgba(0,0,0,0.1);" />
+    </a>
+
+    <button onclick="startMaze()">Tem uma última surpresa 🎮</button>
+  </div>
+
+  <div id="mazeContainer">
+    <canvas id="maze" width="300" height="300"></canvas>
+    <div id="mazeMessage"></div>
+    <div id="touchControls">
+      <div>
+        <button onclick="movePlayer('up')">⬆️</button>
+      </div>
+      <div>
+        <button onclick="movePlayer('left')">⬅️</button>
+        <button onclick="movePlayer('down')">⬇️</button>
+        <button onclick="movePlayer('right')">➡️</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Música de fundo via YouTube (silenciosa inicialmente) -->
+  <div id="bgMusic" style="display: none;">
+    <iframe id="ytplayer" type="text/html" width="0" height="0"
+      src="https://www.youtube.com/embed/vGJTaP6anOU?autoplay=1&loop=1&playlist=vGJTaP6anOU&mute=1"
+      frameborder="0" allow="autoplay">
+    </iframe>
+  </div>
+
+  <script>
+    function reveal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    function startMaze() {
+      document.getElementById('mazeContainer').style.display = 'block';
+      drawMaze();
+    }
+
+    const maze = [
+      [1,1,1,1,1,1,1,1,1,1],
+      [1,1,1,0,1,1,0,1,1,1],
+      [0,0,0,0,0,0,0,0,1,1],
+      [0,1,0,0,0,0,0,0,1,1],
+      [0,1,1,0,0,0,0,1,1,1],
+      [0,0,0,1,0,0,1,1,1,1],
+      [1,1,0,1,1,0,1,1,1,1],
+      [1,0,0,1,1,0,0,0,0,1],
+      [1,0,1,1,1,1,1,1,0,1],
+      [1,0,0,0,0,0,0,1,0,1],
+    ];
+
+    let player = { x: 6, y: 9 };
+    const exitX = 8, exitY = 9;
+
+    function drawMaze() {
+      const canvas = document.getElementById('maze');
+      const ctx = canvas.getContext('2d');
+      const size = 30;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let y = 0; y < maze.length; y++) {
+        for (let x = 0; x < maze[y].length; x++) {
+          ctx.fillStyle = maze[y][x] === 1 ? '#5c0032' : '#fff';
+          ctx.fillRect(x * size, y * size, size, size);
+        }
+      }
+
+      ctx.fillStyle = '#ff66a3';
+      ctx.beginPath();
+      ctx.arc(player.x * size + size / 2, player.y * size + size / 2, size / 3, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = '#00c851';
+      ctx.fillRect(exitX * size, exitY * size, size, size);
+    }
+
+    function movePlayer(direction) {
+      let newX = player.x;
+      let newY = player.y;
+
+      if (direction === 'up') newY--;
+      if (direction === 'down') newY++;
+      if (direction === 'left') newX--;
+      if (direction === 'right') newX++;
+
+      if (maze[newY] && maze[newY][newX] === 0) {
+        player.x = newX;
+        player.y = newY;
+        drawMaze();
+
+        if (player.x === exitX && player.y === exitY) {
+          document.getElementById('mazeMessage').innerText =
+            'Teu amor é um labirinto que eu amo percorrer, obrigado por mais um dia dos namorados ao teu lado. 💘 ';
+        }
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowUp') movePlayer('up');
+      if (e.key === 'ArrowDown') movePlayer('down');
+      if (e.key === 'ArrowLeft') movePlayer('left');
+      if (e.key === 'ArrowRight') movePlayer('right');
+    });
+
+    function enableAudio() {
+      const iframe = document.getElementById('ytplayer');
+      iframe.src = "https://www.youtube.com/embed/vGJTaP6anOU?autoplay=1&loop=1&playlist=vGJTaP6anOU";
+    }
+
+    drawMaze();
+  </script>
+
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
